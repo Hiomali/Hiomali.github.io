@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Улучшим Ozon вместе | Предложения по ПВЗ</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E📦%3C/text%3E%3C/svg%3E">
+</head>
+<body>
+    <div class="app-container">
+        <header class="main-header">
+            <div class="logo-area">
+                <span class="logo-icon">📦</span>
+                <span class="logo-text">Ozon<span class="light">.Пульс</span></span>
+            </div>
+            <p class="header-tagline">Идеи для пунктов выдачи заказов</p>
+        </header>
+
+        <main>
+            <section class="feedback-card">
+                <h2>✨ Что можно улучшить?</h2>
+                <p class="subhead">Расскажите, как сделать пункт выдачи Ozon удобнее, быстрее и приятнее. Каждая идея важна!</p>
+                
+                <form id="suggestionForm" class="suggestion-form">
+                    <div class="form-group">
+                        <label for="userName">Ваше имя (необязательно)</label>
+                        <input type="text" id="userName" name="userName" placeholder="Анна, Дмитрий или никнейм" autocomplete="off">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="messageText">Предложение *</label>
+                        <textarea id="messageText" name="messageText" rows="4" placeholder="Например: добавить кулер с водой, установить стойки для примерки обуви, продлить часы работы..." required></textarea>
+                        <div class="char-counter"><span id="charCount">0</span> / 500</div>
+                    </div>
+                    
+                    <div class="form-actions">
+                        <button type="submit" class="btn-submit">
+                            <span>📬</span> Отправить идею
+                        </button>
+                    </div>
+                </form>
+                <div id="toastMessage" class="toast hidden">Спасибо! Ваше предложение учтено</div>
+            </section>
+
+            <section class="ideas-feed">
+                <div class="feed-header">
+                    <h2>💡 Идеи сообщества</h2>
+                    <span class="badge" id="counterBadge">0 предложений</span>
+                </div>
+                <div id="messagesList" class="messages-list">
+                    <div class="empty-state">
+                        <div class="empty-icon">💭</div>
+                        <p>Загрузка идей...</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="main-footer">
+            <p>✉️ Все предложения анонимно анализируются командой Ozon. Вместе сделаем сервис лучше.</p>
+            <p class="footer-note">Данные сохраняются в Google Таблице · Ваши предложения видят все</p>
+        </footer>
+    </div>
+
+    <!-- Модальное окно для редактирования -->
+    <div id="editModal" class="modal hidden">
+        <div class="modal-content">
+            <span class="modal-close">&times;</span>
+            <h3>Редактировать предложение</h3>
+            <textarea id="editTextarea" rows="4" maxlength="500"></textarea>
+            <div class="modal-buttons">
+                <button id="saveEditBtn" class="btn-submit">Сохранить</button>
+                <button id="cancelEditBtn" class="btn-cancel">Отмена</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
